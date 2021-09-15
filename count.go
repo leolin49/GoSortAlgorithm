@@ -1,4 +1,4 @@
-package sortalgorithm
+package GoSortAlgorithm
 
 func CountSort(arr []int) {
 	max, min := GetMaxAndMin(arr)

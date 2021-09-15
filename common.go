@@ -1,4 +1,4 @@
-package sortalgorithm
+package GoSortAlgorithm
 
 const (
 	INT_MAX = int(^uint(0) >> 1)

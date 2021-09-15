@@ -1,4 +1,4 @@
-package sortalgorithm
+package GoSortAlgorithm
 
 func ShellSort(arr []int) {
 	n := len(arr)

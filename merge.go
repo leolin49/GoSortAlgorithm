@@ -1,4 +1,4 @@
-package sortalgorithm
+package GoSortAlgorithm
 
 func MergeSort(arr []int) {
 	n := len(arr)
