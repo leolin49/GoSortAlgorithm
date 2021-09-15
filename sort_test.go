@@ -20,7 +20,7 @@ func GetRandSlice() []int {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	array := make([]int, ArraySize)
 	for i := 0; i < ArraySize; i++ {
-		array[i] = r.Intn(100000)
+		array[i] = r.Intn(MaxVal)
 	}
 	return array
 }
