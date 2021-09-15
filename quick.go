@@ -37,11 +37,3 @@ func partition(arr []int, low, high int) int {
 	//fmt.Println(arr)
 	return r
 }
-
-/*
-func main() {
-	arr := []int{2, 44, 38, 5, 47, 15, 36, 26, 27, 3, 48, 4, 19, 50, 48}
-	QuickSort(arr)
-	fmt.Println(arr)
-}
-*/
