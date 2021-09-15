@@ -4,20 +4,23 @@ import (
 	"fmt"
 	"math/rand"
 	"testing"
+	"time"
 )
 
 const (
 	RandSeed  = 123456
 	ArraySize = 10000
+	MaxVal    = 100000
 )
 
 var arr = []int{2, 44, 38, 5, 47, 15, 36, 26, 27, 3, 48, 4, 19, 50, 48}
 
 func GetRandSlice() []int {
-	r := rand.New(rand.NewSource(RandSeed))
+	// r := rand.New(rand.NewSource(RandSeed))
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	array := make([]int, ArraySize)
 	for i := 0; i < ArraySize; i++ {
-		array[i] = r.Intn(10000)
+		array[i] = r.Intn(100000)
 	}
 	return array
 }
@@ -45,17 +48,28 @@ func ExampleInsertSort() {
 	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
 }
 
-func ExampleQuickSort() {
-	HandleExample(QuickSort)
-	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
-}
-
 func ExampleShellSort() {
 	HandleExample(ShellSort)
 	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
 }
 
+func ExampleMergeSort() {
+	HandleExample(MergeSort)
+	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
+}
+
+func ExampleQuickSort() {
+	HandleExample(QuickSort)
+	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
+}
+
+func ExampleCountSort() {
+	HandleExample(CountSort)
+	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
+}
+
 func HandleBenchmark(b *testing.B, sf SortFunc) {
+	b.ReportAllocs()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		a := GetRandSlice()
@@ -79,6 +93,14 @@ func BenchmarkShellSort(b *testing.B) {
 	HandleBenchmark(b, ShellSort)
 }
 
+func BenchmarkMergeSort(b *testing.B) {
+	HandleBenchmark(b, MergeSort)
+}
+
 func BenchmarkQuickSort(b *testing.B) {
 	HandleBenchmark(b, QuickSort)
+}
+
+func BenchmarkCountSort(b *testing.B) {
+	HandleBenchmark(b, CountSort)
 }
