@@ -9,7 +9,6 @@ func QuickSort(arr []int) {
 }
 
 func quicksort(arr []int, low, high int) {
-	//	fmt.Println(low, high)
 	if low >= high {
 		return
 	}
@@ -19,8 +18,6 @@ func quicksort(arr []int, low, high int) {
 }
 
 func partition(arr []int, low, high int) int {
-	//	fmt.Println(arr[low : high+1])
-	//fmt.Println(low, high)
 	key := arr[low]
 	l, r := low+1, high
 	for l <= r {
@@ -32,9 +29,7 @@ func partition(arr []int, low, high int) int {
 			arr[l], arr[r] = arr[r], arr[l]
 		}
 	}
-	//fmt.Println(arr[low], arr[r])
 	arr[r], arr[low] = arr[low], arr[r]
-	//fmt.Println(arr)
 	return r
 }
 
