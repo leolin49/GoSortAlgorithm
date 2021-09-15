@@ -1,4 +1,4 @@
-package sort
+package sortalgorithm
 
 func InsertSort(arr []int) {
 	n := len(arr)

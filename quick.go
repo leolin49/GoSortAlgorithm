@@ -1,4 +1,4 @@
-package sort
+package sortalgorithm
 
 func QuickSort(arr []int) {
 	n := len(arr)

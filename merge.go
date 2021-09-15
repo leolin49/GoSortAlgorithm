@@ -1,4 +1,4 @@
-package sort
+package sortalgorithm
 
 func MergeSort(arr []int) {
 	n := len(arr)

@@ -1,9 +1,4 @@
-package sort
-
-const (
-	INT_MAX = int(^uint(0) >> 1)
-	INT_MIN = ^INT_MAX
-)
+package sortalgorithm
 
 func CountSort(arr []int) {
 	max, min := GetMaxAndMin(arr)
@@ -18,17 +13,4 @@ func CountSort(arr []int) {
 			idx++
 		}
 	}
-}
-
-func GetMaxAndMin(arr []int) (max, min int) {
-	max, min = INT_MIN, INT_MAX
-	for _, val := range arr {
-		if val > max {
-			max = val
-		}
-		if val < min {
-			min = val
-		}
-	}
-	return max, min
 }

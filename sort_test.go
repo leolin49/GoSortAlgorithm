@@ -1,4 +1,4 @@
-package sort
+package sortalgorithm
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 const (
 	RandSeed  = 123456
 	ArraySize = 10000
-	MaxVal    = 100000
+	MaxVal    = 100
 )
 
 var arr = []int{2, 44, 38, 5, 47, 15, 36, 26, 27, 3, 48, 4, 19, 50, 48}
@@ -68,6 +68,11 @@ func ExampleCountSort() {
 	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
 }
 
+func ExampleRadixSort() {
+	HandleExample(RadixSort)
+	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
+}
+
 func HandleBenchmark(b *testing.B, sf SortFunc) {
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -103,4 +108,8 @@ func BenchmarkQuickSort(b *testing.B) {
 
 func BenchmarkCountSort(b *testing.B) {
 	HandleBenchmark(b, CountSort)
+}
+
+func BenchmarkRadixSort(b *testing.B) {
+	HandleBenchmark(b, RadixSort)
 }

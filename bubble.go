@@ -1,4 +1,4 @@
-package sort
+package sortalgorithm
 
 func BubbleSort(arr []int) {
 	n := len(arr)
