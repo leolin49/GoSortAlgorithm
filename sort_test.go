@@ -10,7 +10,7 @@ import (
 const (
 	RandSeed  = 123456
 	ArraySize = 10000
-	MaxVal    = 100
+	MaxVal    = 10000
 )
 
 var arr = []int{2, 44, 38, 5, 47, 15, 36, 26, 27, 3, 48, 4, 19, 50, 48}
@@ -63,6 +63,11 @@ func ExampleQuickSort() {
 	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
 }
 
+func ExampleHeapSort() {
+	HandleExample(HeapSort)
+	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
+}
+
 func ExampleCountSort() {
 	HandleExample(CountSort)
 	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
@@ -104,6 +109,10 @@ func BenchmarkMergeSort(b *testing.B) {
 
 func BenchmarkQuickSort(b *testing.B) {
 	HandleBenchmark(b, QuickSort)
+}
+
+func BenchmarkHeapSort(b *testing.B) {
+	HandleBenchmark(b, HeapSort)
 }
 
 func BenchmarkCountSort(b *testing.B) {
