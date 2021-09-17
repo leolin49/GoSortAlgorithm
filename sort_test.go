@@ -28,7 +28,8 @@ func GetRandSlice() []int {
 type SortFunc func([]int)
 
 func HandleExample(sf SortFunc) {
-	a := arr
+	a := make([]int, len(arr))
+	copy(a, arr)
 	sf(a)
 	fmt.Println(a)
 }
@@ -73,6 +74,10 @@ func ExampleCountSort() {
 	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
 }
 
+func ExampleBucketSort() {
+	HandleExample(BucketSort)
+	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
+}
 func ExampleRadixSort() {
 	HandleExample(RadixSort)
 	// Output: [2 3 4 5 15 19 26 27 36 38 44 47 48 48 50]
@@ -121,4 +126,8 @@ func BenchmarkCountSort(b *testing.B) {
 
 func BenchmarkRadixSort(b *testing.B) {
 	HandleBenchmark(b, RadixSort)
+}
+
+func BenchmarkBucketSort(b *testing.B) {
+	HandleBenchmark(b, BucketSort)
 }
