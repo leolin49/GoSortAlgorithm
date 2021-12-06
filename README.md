@@ -20,5 +20,3 @@ go tool pprof -http=:11111 cpu.pprof
 
 > ps:如果提示 Graphviz 没有安装，则通过 `brew install graphviz`(MAC) 或 `apt install graphviz`(Ubuntu) 即可
 
-![image-20211206172918652](C:\Users\linyufeng\AppData\Roaming\Typora\typora-user-images\image-20211206172918652.png)
-
