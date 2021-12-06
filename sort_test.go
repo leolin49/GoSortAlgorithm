@@ -10,7 +10,7 @@ import (
 const (
 	RandSeed  = 123456
 	ArraySize = 10000
-	MaxVal    = 10000
+	MaxVal    = 100000
 )
 
 var arr = []int{2, 44, 38, 5, 47, 15, 36, 26, 27, 3, 48, 4, 19, 50, 48}
