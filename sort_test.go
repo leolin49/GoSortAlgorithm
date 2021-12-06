@@ -87,7 +87,9 @@ func HandleBenchmark(b *testing.B, sf SortFunc) {
 	b.ReportAllocs()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
+		b.StopTimer()
 		a := GetRandSlice()
+		b.StartTimer()
 		sf(a)
 	}
 }
