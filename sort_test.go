@@ -10,7 +10,7 @@ import (
 const (
 	RandSeed  = 123456
 	ArraySize = 10000
-	MaxVal    = 10000
+	MaxVal    = 100000
 )
 
 var arr = []int{2, 44, 38, 5, 47, 15, 36, 26, 27, 3, 48, 4, 19, 50, 48}
@@ -87,7 +87,9 @@ func HandleBenchmark(b *testing.B, sf SortFunc) {
 	b.ReportAllocs()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
+		b.StopTimer()
 		a := GetRandSlice()
+		b.StartTimer()
 		sf(a)
 	}
 }
